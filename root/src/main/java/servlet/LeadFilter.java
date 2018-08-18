@@ -48,12 +48,12 @@ public class LeadFilter extends HttpServlet {
             .bodyForm(form.build()).execute();
 
         Header header = leadResponse.returnResponse().getHeaders("Location")[0];
+
         String location = header.getValue();
         if(!location.contains(RESULT_PAGE)){
             resp.sendRedirect(location);
             return;
         }
-
 
         String confPath = req.getRequestURI();
         IOUtils.copy(req.getServletContext().getResourceAsStream(confPath), resp.getOutputStream());
