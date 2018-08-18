@@ -2,6 +2,9 @@ package servlet;/*
  * Copyright, 1999-2017, salesforce.com All Rights Reserved Company Confidential
  */
 
+
+import org.apache.commons.io.IOUtils;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,8 +22,9 @@ public class LeadFilter extends HttpServlet {
     }
 
     @Override protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("trying to get " + req.getRequestURI() + req.getServletContext().getRealPath("/"));
-        resp.getWriter().flush();
-        resp.getWriter().close();
+
+        String confPath = req.getRequestURI();
+        IOUtils.copy(req.getServletContext().getResourceAsStream(confPath), resp.getOutputStream());
+
     }
 }
