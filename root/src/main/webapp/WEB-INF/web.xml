@@ -4,4 +4,13 @@
 
 <web-app>
   <display-name>Root Web App</display-name>
+
+  <servlet>
+    <servlet-name>LeadFilter</servlet-name>
+    <servlet-class>servlet.LeadFilter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LeadFilter</servlet-name>
+    <url-pattern>/conf/*</url-pattern>
+  </servlet-mapping>
 </web-app>
