@@ -8,7 +8,6 @@
   <artifactId>www-site</artifactId>
   <version>1.0-SNAPSHOT</version>
   <modules>
-    <module>leadcapture</module>
     <module>root</module>
   </modules>
   <packaging>pom</packaging>

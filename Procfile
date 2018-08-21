@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/dependency/jetty-runner.jar --port $PORT --path /leadcapture leadcapture/target/leadcapture.war root/target/root.war
+web: java $JAVA_OPTS -jar target/dependency/jetty-runner.jar --port $PORT  root/target/root.war
